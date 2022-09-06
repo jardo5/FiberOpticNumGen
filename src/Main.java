@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -6,21 +7,22 @@ public class Main {
         System.out.println("Enter Number...");
 
         String[] fiberColors = {"Blue", "Orange", "Green", "Brown", "Slate", "White", "Red", "Black", "Yellow", "Violet", "Rose", "Aqua"};
+        String[] tubeColors = {"Blue", "Orange", "Green", "Brown", "Slate", "White", "Red", "Black", "Yellow", "Violet", "Rose", "Aqua"};
 
-        int calcNum = inputNum.nextInt(); // Read user input
+        int input = inputNum.nextInt(); // Read user input for Row
         
-         if (calcNum < 145) { 
-            int modNum = (calcNum - 1) % 12; // Find the modulus number from 12
-            System.out.println(modNum);
+         if (input < 145) { 
+            int rowNum = (input - 1) % fiberColors.length;   // Row
+            System.out.println("The Fiber Color is.." + fiberColors[rowNum]);
+            
+            int colNum = (input - 1) / fiberColors.length;                  // Column
+            System.out.println("The Tube Color is.." + fiberColors[colNum]);
+         } else {
+            System.out.println("Invalid input"); // Invalid input
          }
-         else if (calcNum >= 145) {
-            System.out.println("Invalid Number/Over 144c"); // If user input is over 144 count
-         }
+         
         
         
 
-
-
-
-    }
+    }      
 }
