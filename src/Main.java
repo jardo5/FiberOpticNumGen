@@ -1,6 +1,7 @@
 import java.util.Scanner;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 public class Main {
@@ -28,16 +29,23 @@ public class Main {
          Scanner inputRow = new Scanner(System.in);  // User inputs String Row (Fiber Color)
          System.out.println("Enter Fiber color"); 
 
-         String rowColor = inputRow.nextLine(); // Read user input for Row
+         List<String> fiberList = Arrays.asList(fiberColors);
+         System.out.println("Supported Colors: " + fiberList);
+         
+         String input = inputRow.next();
+         if (fiberList.contains(input)) {
+            int conversion = fiberList.indexOf(input);
+            int output = conversion;
+            System.out.println("output: " + output);
+
+
+
+
+            }
+         
 
 
 
     }
 
 }
-
-
-
-         // Arrays.sort(fiberColors);  Sort fiberColors array for binarySearch
-
-         // System.out.println(numRow + " Was Found at " + Arrays.binarySearch(fiberColors, numRow));
