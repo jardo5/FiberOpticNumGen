@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -9,6 +8,7 @@ public class Main {
       String[] fiberColors = { "Blue", "Orange", "Green", "Brown", "Slate", "White", "Red", "Black", "Yellow", "Violet","Rose", "Aqua" }; // 12 Fiber colors
 
       Scanner enterConversion = new Scanner(System.in); // User inputs String Row (Fiber Color)
+      System.out.println("ALL INPUTS ARE CASE SENSATIVE");
       System.out.println("Are you trying to convert Fiber # to Colors? Y or N");
 
       String conversion;
@@ -19,8 +19,9 @@ public class Main {
          // Number Conversion
 
          Scanner inputNum = new Scanner(System.in); // User inputs Int
-         System.out.println("Only Supporting 144 Count!");
+         System.out.println("Currently Only Supporting 144 Count!");
          System.out.println("Enter Fiber Number...");
+
 
          int numInput = inputNum.nextInt(); // Read user input for Number
          if (numInput < 145) {
@@ -32,6 +33,8 @@ public class Main {
          } else {
             System.out.println("Invalid input"); // Invalid input
          }
+
+         inputNum.close(); // Close Y Scanner
 
       } else if (conversion.equals("N")) {
 
@@ -54,6 +57,7 @@ public class Main {
             System.out.println("Invalid input");
          }
 
+
          // Column Conversion
 
          Scanner inputColumn = new Scanner(System.in); // User inputs String Column (Tube Color)
@@ -73,7 +77,15 @@ public class Main {
          int numOutput = (columnOutput * fiberColors.length) + (rowOutput + 1 % fiberColors.length); // Inverse colNum and rowNum calculations
          System.out.println(numOutput);
 
+         inputColumn.close(); 
+         inputRow.close(); 
+         enterConversion.close(); // Close All Remaining Scanners
+
       }
    }
 
 }
+
+/* Created by
+   Jarod S 2022
+*/
